@@ -237,15 +237,15 @@
             });
             var popupContent = '<table>\
                     <tr>\
-                        <th scope="row">Tên_đi��</th>\
+                        <th scope="row">Tên điểm</th>\
                         <td>' + (feature.properties['Tên_đi��'] !== null ? autolinker.link(String(feature.properties['Tên_đi��']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Latitude</th>\
+                        <th scope="row">Vĩ độ (Lat.): </th>\
                         <td>' + (feature.properties['Latitude'] !== null ? autolinker.link(String(feature.properties['Latitude']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Longitude</th>\
+                        <th scope="row">Kinh độ (Lon.): </th>\
                         <td>' + (feature.properties['Longitude'] !== null ? autolinker.link(String(feature.properties['Longitude']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
@@ -253,9 +253,10 @@
                         <td>' + (feature.properties['image_path'] !== null ? autolinker.link(String(feature.properties['image_path']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
                     <tr>\
-                        <th scope="row">Kỷ niệ</th>\
+                        <th scope="row">Chi tiết:</th>\
                         <td>' + (feature.properties['Kỷ niệ'] !== null ? autolinker.link(String(feature.properties['Kỷ niệ']).replace(/'/g, '\'').toLocaleString()) : '') + '</td>\
                     </tr>\
+		    <tr><img src=' + (feature.properties['image_path'] !== null ? (String(feature.properties['image_path']).replace(/'/g, '\'').toLocaleString()) : '') + ' style="width:100%" > </tr>\
                 </table>';
             var content = removeEmptyRowsFromPopupContent(popupContent, feature);
 			layer.on('popupopen', function(e) {
